@@ -9,6 +9,6 @@ int numA = int.Parse(Console.ReadLine());
 Console.Write("Введите второе число: ");
 int numB = int.Parse(Console.ReadLine());
 
-if (numA == numB) F;
+if (numA == numB);
 else if (numA > numB) Console.WriteLine($"Число {numA} является бóльшим. \nЧисло {numB} является меньшим.");
      else Console.WriteLine($"Число {numB} является бóльшим. \nЧисло {numA} является меньшим.");
