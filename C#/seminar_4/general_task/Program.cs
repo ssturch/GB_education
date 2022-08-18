@@ -7,8 +7,13 @@
 
     Console.Write("Введите степень B: ");
     int pow = int.Parse(Console.ReadLine());
-
-    Console.Write($"Результат: {num}^{pow} = {funcPow(num, pow)}");
+    if (num == 0 && pow == 0) Console.Write($"Ошибка: {num}^{pow} - данное выражение не имеет смысла");
+    else 
+    {
+        int result = funcPow(num, pow);
+        if (num != 0 && pow != 0 && result == 0) Console.Write($"Ошибка: Результат вычисления {num}^{pow} переполняет переменную int");
+        else Console.Write($"Результат: {num}^{pow} = {result}");
+    }
 }
 
 void task27func ()
@@ -41,15 +46,15 @@ void task29func ()
     Console.Write($"Результат: {output}"); 
 }
 
-void taskExtra ()
-{
-    Console.WriteLine("Функция, рисующая ёлочку согласно её высоте");
-    Console.WriteLine("*******************************************");
-    Console.Write("Введите высоту ёлочки: ");
-    int height = int.Parse(Console.ReadLine());
-    funcFirTree(height);
+// void taskExtra ()
+// {
+//     Console.WriteLine("Функция, рисующая ёлочку согласно её высоте");
+//     Console.WriteLine("*******************************************");
+//     Console.Write("Введите высоту ёлочки: ");
+//     int height = int.Parse(Console.ReadLine());
+//     funcFirTree(height);
 
-}
+// }
 
 
 
@@ -92,25 +97,25 @@ int[] funcArrFromAtoB(int qty, int valueA, int valueB)
     return array;
 }
 
-void funcFirTree (int height)
-{   
-    Console.Clear();
-    int x = 10; // точка старта (верхушка ёлки)
-    int k = 3; // минимальная высота секции елки
-    int f = 2; // множитель размеров секции елки
-    for (int i = 1; i < height - 1; i++)
-    {
-        for (int j = 0; j < i * k; j++)
-        {
-            for (int n = 0; n < )
-        Console.SetCursorPosition(x + j,j);
-        Console.WriteLine("+");
-        }
-    }
-}
+// void funcFirTree (int height)
+// {   
+//     Console.Clear();
+//     int x = 10; // точка старта (верхушка ёлки)
+//     int k = 3; // минимальная высота секции елки
+//     int f = 2; // множитель размеров секции елки
+//     for (int i = 1; i < height - 1; i++)
+//     {
+//         for (int j = 0; j < i * k; j++)
+//         {
+//             for (int n = 0; n < )
+//         Console.SetCursorPosition(x + j,j);
+//         Console.WriteLine("+");
+//         }
+//     }
+// }
 
-//task25func ();
+task25func ();
 //task27func ();
 //task29func ();
 
-taskExtra ();
+//taskExtra ();
