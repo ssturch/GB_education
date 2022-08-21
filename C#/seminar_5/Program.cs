@@ -53,7 +53,7 @@ int[] funcCountEvenFromArr(int qty, out int countEven)
     countEven = 0;
     while (index < qty)
     {
-        array[index] = new Random().Next(100,999);
+        array[index] = new Random().Next(100,1000);
         if (array[index] % 2 == 0) countEven ++;
         index++;
     }
@@ -85,7 +85,7 @@ int [] funcSummOddIndexDigFromArray (int qty, int minInt, int maxInt, out int su
     int[] array = new int[qty];
     while (index < qty)
     {
-        array[index] = new Random().Next(minInt,maxInt);
+        array[index] = new Random().Next(minInt,maxInt+1);
         if (index % 2 != 0) summOddIndexDig += array[index];
         index++;
 
@@ -126,7 +126,7 @@ double [] funcDiffMaxMinDig (int qty, int accuracy, int minInt, int maxInt, out 
     diff = 0;
     while (index < qty)
     {
-        array[index] = Math.Round(new Random().Next(minInt, maxInt) + new Random().NextDouble(), accuracy, MidpointRounding.AwayFromZero);
+        array[index] = Math.Round(new Random().Next(minInt, maxInt+1) + new Random().NextDouble(), accuracy, MidpointRounding.AwayFromZero);
         if (index > 0) 
         {
             if (array [index] < min) min = array [index];
@@ -167,7 +167,7 @@ int [] funcInitArray(int qty, int minInt, int maxInt)
     int[] initArrayRandom = new int[qty];
     while (index < qty)
     {
-        initArrayRandom[index] = new Random().Next(minInt, maxInt);
+        initArrayRandom[index] = new Random().Next(minInt, maxInt+1);
         index++;
     }
     return initArrayRandom;
