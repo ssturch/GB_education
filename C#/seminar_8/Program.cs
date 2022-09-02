@@ -1,4 +1,5 @@
-﻿//------------------------------------------------------------------------------------------------------------------------------------
+﻿using System.Diagnostics;
+//------------------------------------------------------------------------------------------------------------------------------------
 //Стартовый код
 Console.WriteLine("************************************************************");
 Console.WriteLine("Данная программа содержит решения 6-ти заданий 8-го семинара.");
@@ -502,22 +503,73 @@ void Task62 ()
 
 //------------------------------------------------------------------------------------------------------------------------------------
 //код задачи со звездочкой (не стояла задача сделать сверхбыстрый по возможности код, поэтому пошел по наипростому пути)
+
 void taskExtra ()
+
 {
     Console.WriteLine("************************************************************************************");
     Console.WriteLine("Программа вычисляет корень введенного числа, возвращая целую часть полученного числа");
     Console.WriteLine("************************************************************************************");
     Console.Write("Введите число из которого необходимо извлечь корень: ");
     int input = int.Parse(Console.ReadLine());
+    
+    // 1-й способ - перебор с инкрементом ++1
     int result = 0;
     int multiply = 0;
 
+    Stopwatch stopWatch = new Stopwatch();
+    stopWatch.Reset();
+
+    stopWatch.Start();
     while (multiply < input)
     {
         result += 1;
         multiply = result * result;
     }
     if (multiply > input) result -= 1;
+    stopWatch.Stop();
+        
+    Console.WriteLine($"Квадратный корень (1) = {result}");
+    Console.WriteLine($"Метод перебора ticks = {stopWatch.ElapsedTicks}");
+    stopWatch.Reset();
 
-    Console.Write($"Квадратный корень = {result}");
+    // 2-й способ - метод Ньютона
+    
+    result = 1;
+    int last = 0;
+
+    stopWatch.Start();
+    while (result != last)
+    {
+        last = result;
+        result = (result + input/result) / 2;
+    }
+    stopWatch.Stop();
+    
+    Console.WriteLine($"Квадратный корень (2) = {result}");
+    Console.WriteLine($"Метод Ньютона ticks = {stopWatch.ElapsedTicks}");
+    stopWatch.Reset();
+
+    // 3-й способ - метод бинарного поиска
+
+    int left = 1;
+    int right = input;
+    int middle = 0;
+
+    stopWatch.Start();
+    while(left <= right)
+    {
+        middle = (left + right)/2;
+        if (middle == input/middle) result = middle;
+        if (middle < input/middle) left = middle + 1;
+        else right = middle - 1;
+    }
+    stopWatch.Stop();
+
+    Console.WriteLine($"Квадратный корень (3) = {result}");
+    Console.WriteLine($"Метод бинарного поиска ticks = {stopWatch.ElapsedTicks}");
+    stopWatch.Reset();
+    
+
+
 }

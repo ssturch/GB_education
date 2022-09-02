@@ -146,7 +146,7 @@ double [] funcDiffMaxMinDig (int qty, int accuracy, int minInt, int maxInt, out 
 void taskExtra ()
 {
     Console.WriteLine("**********************************************");
-    Console.WriteLine("Функция, реализующая невозрастающую сторировку");
+    Console.WriteLine("Функция, реализующая невозрастающую сортировку");
     Console.WriteLine("**********************************************");
     Console.Write("Введите размер массива: ");
     int qty = int.Parse(Console.ReadLine());
