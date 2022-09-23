@@ -1,4 +1,9 @@
 #Напишите программу, которая будет принимать на вход дробь и показывать первую цифру дробной части числа.
-print("Введите дробное число:", end = " "); userInput = input()
-if isinstance(userInput, float): print(f"Результат: {str(userInput)[3]}")
-else: print(f"Число {userInput} не является дробным!")
+#В C# подобную задачу решали чисто математически, а сейчас было интересно решить через регулярку)
+import re
+userInput = input("Введите дробное число: ")
+match = re.fullmatch(r"-*[0-9]+[,.][0-9]+", userInput)
+if match: 
+    output = re.search(r"(?<=[.,])[0-9]+",userInput)
+    print(f"Результат: {output.group(0)[0]}")
+else: print(f"Введенное значение не является дробным числом!")
