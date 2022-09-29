@@ -10,8 +10,6 @@ randI = None
 for i in range (len(userInputArr) - 1, -1, -1):
     randI = random.randint(0, i)
     shuffOutputArr.append(userInputArr[randI])
-    print(shuffOutputArr)
     userInputArr.pop(randI)
-    print(f"{randI} - {i}")
     
 print(f"Перемешанный список:\n{shuffOutputArr}")
