@@ -11,5 +11,5 @@ def RandomDigit(dig):
     res = d % (dig)
     return res
 
-print(RandomDigit(100))
+print(RandomDigit(10))
 
