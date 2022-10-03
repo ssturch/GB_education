@@ -5,7 +5,9 @@ import psutil
 import math
 
 def RandomDigit(dig):
-    a = sum(psutil.cpu_percent(interval=1, percpu=True))
+    a = 0
+    while a == 0:
+        a = sum(psutil.cpu_percent(interval=0.1, percpu=True))
     b = psutil.cpu_count()
     c = math.log(a, b)
     d = int(str(c).split(".")[1])
