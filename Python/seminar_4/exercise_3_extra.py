@@ -1,5 +1,6 @@
 # Задайте последовательность цифр. Напишите программу, которая выведет список неповторяющихся элементов исходной последовательности. 
-# Решать через множества удобно, но необязательно
+# Решение без использования множеств, используя регулярку.
+import re
 
 isError = True
 while isError == True:
@@ -7,20 +8,21 @@ while isError == True:
     if userInput.isnumeric() == True: isError = False
     else: print("Ошибка ввода, повторите ввод!")
 
-inputList = list(userInput)
-lot = set(inputList) # Множество уникальных элементов
+sortInput = ''.join(sorted(userInput))
+regExp = r"\d"
 result = []
 
-for i in lot:
-    repeat = 0
-    for j in range(len(inputList)):
-        if inputList[j] == i: repeat += 1; tempj = j
-        if repeat > 1: tempj = None; break
-    if tempj != None: result.append(inputList[tempj])
-
+while re.search(regExp,sortInput) != None or len(sortInput) != 0:
+    minElement = sortInput[0]
+    regExp = rf"{minElement}" + "{2,}"
+    if re.search(regExp,sortInput) == None and len(sortInput) != 0:
+        result.append(sortInput[0])
+        sortInput = sortInput.replace(sortInput[0], '', 1)
+    else:    
+        sortInput = re.sub(regExp,'',sortInput,1)
+        
 if len(result): print(f"Результат: {result}") 
 else: print("В данной последовательности нет уникальных чисел!")
-
 
         
 
