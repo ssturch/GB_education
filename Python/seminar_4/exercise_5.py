@@ -103,5 +103,4 @@ print(f"Получено 2-ое уравнение: {equa2}")
 tempResult = DictEquaSumm(DigestionStrEquation(equa1), DigestionStrEquation(equa2))
 result = EquaFromDict(tempResult)
 print(f"Результат сложения: {result}")
-
 WriteToFile(writeTo,result)
