@@ -4,15 +4,11 @@
 
 import random, re, os
 
-def MakeRawEquation(k, maxConst = 1):
+def MakeRawEquation(k, maxConst = 1): # генерация реализована рекурсией!
 
     while k >= 0:
         randOper = None
-
-        ## - случайная генерация оператора сложения или вычитания
-        ##---------------------------------------------
-        randOper = random.choice(['+', '-'])
-        ##---------------------------------------------
+        randOper = random.choice(['+', '-']) #случайная генерация оператора сложения или вычитания
         const = random.randint(0, maxConst) #генерируемый случайный множитель
         deg = "^" + str(k)  #генерируемая степень
         equatTerm = str(const) + "x" + deg #генерация члена уровнения
@@ -21,12 +17,12 @@ def MakeRawEquation(k, maxConst = 1):
 
         regExp = r"\WNone"
         result = re.sub(regExp,"=0",result,1)
-        print(result)
+        print (result)
         return result
 
 def RoastRawEquation(equa):
     if equa != None or '':
-        regExp = r"(\b0x\^\d)|(\b0x\^\d\+)|(x\^0)|(\^1\b)|([-+]0x\^\d)|(1(?=x\^[^0]))"
+        regExp = r"(\b0x\^\d*)|(\b0x\^\d\+)|(x\^0)|(\^1\b)|([-+]0x\^\d*)|(1(?=x\^[^0]))"
         #выражение \b0x\^\d исключает получение значения 0х^2 в начале, т.е. вместо 0x^2 - x = 0 будет - x = 0
         #выражение \b0x\^\d\+ исключает получение значения 0х^2+ в начале, т.е. вместо 0x^2 + x = 0 будет x = 0
         #выражение x\^0 исключает получение значения 5х^0, вместо него будет 5
@@ -39,11 +35,12 @@ def RoastRawEquation(equa):
     else: return print("Входящее выражение пустое!")
 
 def WriteToFile(path,txt):
-    file = open(path, 'w')
-    file.write(txt)
+    try:
+        file = open(path, 'a')
+    except:
+        file = open(path, 'w')
+    file.writelines(txt +'\n')
     file.close
-
-
 
 isError = True
 while isError == True:
