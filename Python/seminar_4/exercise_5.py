@@ -1,7 +1,6 @@
 #Даны два файла, в каждом из которых находится запись многочлена.
 #Задача - сформировать файл, содержащий сумму многочленов.
 
-from fileinput import isfirstline
 import re, os, math
 
 def DigestionStrEquation(equa):
@@ -78,14 +77,21 @@ def EquaFromDict(dictEqua):
     return outputStr
 
 def WriteToFile(path,txt):
-    file = open(path, 'w')
-    file.write(txt)
-    file.close
+    try:
+        file = open(path, 'w')
+        file.write(txt)
+        file.close
+        print (f"Результат записан, путь к файлу: {path}")
+    except:
+        print ("Ошибка записи!")
 
 def ReadFromFile(path):
-    file = open(path, 'r')
-    result = file.readline()
-    return result
+    try:
+        file = open(path, 'r')
+        result = file.readline()
+        return result
+    except:
+        print ("Ошибка чтения!")
          
 pathEqua1 = os.path.abspath(__file__).replace(os.path.basename(__file__), '')+ r'\equa_ex5_1.eq'
 pathEqua2 = os.path.abspath(__file__).replace(os.path.basename(__file__), '')+ r'\equa_ex5_2.eq'
@@ -97,9 +103,5 @@ print(f"Получено 2-ое уравнение: {equa2}")
 tempResult = DictEquaSumm(DigestionStrEquation(equa1), DigestionStrEquation(equa2))
 result = EquaFromDict(tempResult)
 print(f"Результат сложения: {result}")
-try:
-    WriteToFile(writeTo,result)
-    print (f"Результат сложения записан в файл equa_ex5_RESULT.eq")
-except:
-    print ("Ошибка записи!")
 
+WriteToFile(writeTo,result)
