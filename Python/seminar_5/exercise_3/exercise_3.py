@@ -41,11 +41,6 @@ def playSound(type):
         case 'draw': 
             winsound.PlaySound(drawSound, winsound.SND_FILENAME | winsound.SND_ASYNC)
 
-def resetPause(s):
-    st = time.time()
-    while time.time() < st + s:
-        print(time.time())
-
 def checkWin(butDict):
     global сounter
     actualSet = set(butDict.values())
@@ -114,7 +109,6 @@ def ResetGame():
     btn21.config(image = emptyimg, bg = '#f0f0f0',command = lambda:clicked(btn21, 7))
     btn22.config(image = emptyimg, bg = '#f0f0f0',command = lambda:clicked(btn22, 8))
 
-
 def clicked(BtnName, pos):
     
     global сounter 
@@ -133,15 +127,12 @@ def clicked(BtnName, pos):
         playSound('random')
         if сounter < 9: clickedByBot()
 
-
     elif isUserCourse == False:
         changePic(BtnObject, crossimg)
         isUserCourse = True
     print(сounter)
     checkWin(butDict)
     
-    # if isStop == True: 
-
 def clickedByBot():
     global сounter 
     global butDict
@@ -157,6 +148,7 @@ def clickedByBot():
     BtnObject = eval(BotBtnName)
     BtnObject.invoke()
     сounter += 1
+
 btn00 = Button(window, height=100, width=100, image = emptyimg, command = lambda:clicked(btn00, 0)); 
 btn00.grid(column=0, row=0)
 btn01 = Button(window, height=100, width=100, image = emptyimg, command = lambda:clicked(btn01, 1)); 
@@ -177,5 +169,6 @@ btn22 = Button(window, height=100, width=100, image = emptyimg, command = lambda
 btn22.grid(column=2, row=2)
 resetBtn = Button(window, height=2, width=13,  text = 'RESET', command = ResetGame)
 resetBtn.grid(column=1, row=3)
+
 window.mainloop()
 
