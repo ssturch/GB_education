@@ -1,4 +1,7 @@
-import os
+import easygui
+def OpenFile():
+    path = easygui.fileopenbox()
+    return path
 
 def OpenContacts(path):
     isError = False
@@ -15,11 +18,10 @@ def SaveContacts(path, saveList):
     isNewFile = True
     try:
         file = open(path, 'x')
-        print(isNewFile)
     except FileExistsError:
         isNewFile = False
-        print(isNewFile)
-        file = open(path, 'a')
+        file = open(path, 'w')
+    saveList = list(map(lambda el: el + '\n', saveList))
     file.writelines(saveList)
     file.close()
     if isNewFile  is True: return (isNewFile, None, f"Предупреждение: Создан новый файл {path}")
@@ -40,13 +42,6 @@ def ConvertFromFile(tempList):
 def ConvertToFile(tempList):
     resList = []
     for dict in tempList:
-        res =' '.join(dict.values()) + '\n'
+        res =' '.join(dict.values()) #+ '\n'
         resList.append(res)
     return resList
-
-
-pathTest = os.path.abspath(__file__).replace(os.path.basename(__file__), '')+ r'\test.contfile'
-pathSaveTest =  os.path.abspath(__file__).replace(os.path.basename(__file__), '')+ r'\testS606ave.contfile'
-
-testSave = ConvertToFile(OpenContacts(pathTest)[1])
-print(SaveContacts(pathSaveTest, testSave))
