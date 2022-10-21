@@ -1,0 +1,48 @@
+21-10-2022 13:30:58: ERROR: Selected contact list empty!
+21-10-2022 13:31:30: ERROR: Selected contact list empty!
+21-10-2022 13:34:20: ERROR: Selected contact list empty!
+21-10-2022 13:35:05: ERROR: Selected contact list empty!
+21-10-2022 13:35:41: ERROR: Selected contact list empty!
+21-10-2022 13:36:08: ERROR: Selected contact list empty!
+21-10-2022 13:38:51: ERROR: Selected contact list empty!
+21-10-2022 13:39:29: ERROR: Selected contact list empty!
+21-10-2022 13:40:07: ERROR: Selected contact list empty!
+21-10-2022 13:40:18: ERROR: Selected contact list empty!
+21-10-2022 13:40:40: ERROR: Selected contact list empty!
+21-10-2022 13:41:02: ERROR: Selected contact list empty!
+21-10-2022 13:41:28: ERROR: Selected contact list empty!
+21-10-2022 13:42:13: ERROR: Selected contact list empty!
+21-10-2022 13:43:10: ERROR: Selected contact list empty!
+21-10-2022 14:00:15: ERROR: Selected contact list empty!
+21-10-2022 14:00:31: ERROR: Selected contact list empty!
+21-10-2022 14:02:53: ERROR: Selected contact list empty!
+21-10-2022 19:55:13: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:37: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:37: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:41: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:41: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:41: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:50: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:50: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:56: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:56: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:57: ERROR: Ñontact number does not exist. 
+21-10-2022 20:01:57: ERROR: Ñontact number does not exist. 
+21-10-2022 20:02:02: ERROR: Ñontact number does not exist. 
+21-10-2022 20:02:03: ERROR: Ñontact number does not exist. 
+21-10-2022 20:09:57: ERROR: Added contact is empty
+21-10-2022 20:09:59: ERROR: Added contact is empty
+21-10-2022 20:09:59: ERROR: Added contact is empty
+21-10-2022 20:23:34: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:34: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:34: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:35: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:35: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:36: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:36: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:36: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:36: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:37: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:37: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:37: ERROR: Ñontact number does not exist. 
+21-10-2022 20:23:38: ERROR: Ñontact number does not exist. 
